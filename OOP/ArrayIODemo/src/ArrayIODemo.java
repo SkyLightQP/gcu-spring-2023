@@ -31,7 +31,7 @@ public class ArrayIODemo {
             System.out.println("Read objects from " + output);
             Species[] species = (Species[]) objectInputStream.readObject();
             for (int i = 0; i < species.length; i++) {
-                species[i].writeOutput();
+                System.out.println(species[i]);
             }
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Error reading from file.");

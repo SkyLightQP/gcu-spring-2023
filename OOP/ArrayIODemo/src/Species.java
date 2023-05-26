@@ -12,27 +12,11 @@ public class Species implements Serializable {
         this.growthRate = growthRate;
     }
 
-    public void readInput() {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("What is the species' name?");
-        name = keyboard.nextLine();
-
-        System.out.println("What is the population of the species?");
-        population = keyboard.nextInt();
-        while (population < 0) {
-            System.out.println("Population cannot be negative.");
-            System.out.println("Reenter population:");
-            population = keyboard.nextInt();
-        }
-
-        System.out.println("Enter growth rate (% increase per year):");
-        growthRate = keyboard.nextDouble();
-    }
-
-    public void writeOutput() {
-        System.out.println("Name = " + name);
-        System.out.println("Population = " + population);
-        System.out.println("Growth rate = " + growthRate + "%");
+    @Override
+    public String toString() {
+        return "Name = " + name + "\n" +
+                "Population = " + population + "\n" +
+                "Growth rate = " + growthRate + "%";
     }
 
     public int predictPopulation(int years) {
